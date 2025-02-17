@@ -51,7 +51,6 @@ def load_saved_speed():
     player = next((p for p in av_player.players if isinstance(p, MpvManager)), None)
     if player:
         player.set_property("speed", config["last_speed"])
-        tooltip(f"Loaded speed: {config['last_speed']:.1f}x", period=1000)
 
 gui_hooks.profile_did_open.append(load_saved_speed)
 gui_hooks.reviewer_did_init.append(add_shortcuts)
